@@ -7,19 +7,21 @@ const getApiInfo = async () => {
             url : "https://restcountries.com/v3/all",
         })
 
-        const apiInfo = await apiUrl.data.results?.map((e) => {
+        const apiInfo = await apiUrl.data.map((e) => {
             return{
-                id:e.id,
-                name: e.name,
-                image: e.image,
-                continent: e.continents,
-                capital: e.capital,
+                id:e.cca3,
+                name: e.name.common,
+                image: e.flags[0],
+                continent: e.continents[0],
+                capital: e.capital ? e.capital[0] : 'el pais no tiene capital',
                 subregion: e.subregion,
                 area: e.area,
                 population: e.population,
             }
         })
+        //console.log(apiInfo)
         return apiInfo;
+       
     }catch(error){
         return error
     }
