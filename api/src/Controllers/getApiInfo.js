@@ -1,10 +1,13 @@
 require('dotenv').config();
 const axios =require('axios')
+const { Country } = require('../db')
 
 const getApiInfo = async () => {
     try{
         const apiUrl = await axios({
+            
             url : "https://restcountries.com/v3/all",
+            
         })
 
         const apiInfo = await apiUrl.data.map((e) => {
@@ -28,6 +31,24 @@ const getApiInfo = async () => {
 }
 
 
+
+const getByName = async (name) => {
+
+    const infoApì = (
+        await axios.get('https://restcountries.com/v3/all')
+    ).data;
+
+    const countryApi = apiInfo(infoApì);
+
+    const countryFiltered = countryApi.filter((country) => country.name === name);
+
+    const countryDb = await Country.findAll({ where: { name : name }});
+    
+    return {...countryFiltered , ...countryDb}
+}
+
+
 module.exports = {
-    getApiInfo
+    getApiInfo,
+    getByName
 }

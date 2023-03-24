@@ -1,22 +1,47 @@
 const { getAll } = require('../Controllers/getAllInfo')
+const { getByName } = require('../Controllers/getApiInfo')
 
 const getCountriesHandler = async (req,res) => {
-    try{
-        const {name} = req.query; 
-        let allInfo = await getAll(name)
-        res.json(allInfo)
-    }catch(error){
-        res.status(404).send(error)
+
+ const {name} = req.query;
+
+   try{
+    if (name) {
+        const countryByName = await getByName(name);
+        res.status(200).json(countryByName);
+       
+    }else{
+        const response = await getAll();
+        res.status(200).json(response)
     }
+   }catch(error){
+    res.status(400).json({error: error.message});
+   }
 };
 
 
 
-// const getCountriesByName = async (name) => {
 
-//     const countryApi = 
 
-  
-// }
-module.exports=getCountriesHandler 
+
+
+
+//-------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = 
+    getCountriesHandler
+   
+
 
