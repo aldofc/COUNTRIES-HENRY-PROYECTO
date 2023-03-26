@@ -1,11 +1,13 @@
-const { Router } = require('express');
-const   getCountriesHandler  = require('../Handlers/CountriesHandler');
-const getIdCountryHandle  = require('../Handlers/CountryIdHandler');
-
-const routesCountries = Router();
-
-routesCountries.get('/' , getCountriesHandler);
-routesCountries.get('/:id' , getIdCountryHandle);
+ const { Router } = require('express');
+ const { getCountriesHandler } = require("../Handlers/CountriesHandlers");
+ const { getIdHandler } = require('../Handlers/CountriesHandlers');
 
 
-module.exports =   routesCountries 
+
+ const routesCountries = Router();
+
+ routesCountries.get('/' , getCountriesHandler);
+ routesCountries.get('/:id' , getIdHandler);
+
+
+ module.exports =   routesCountries 

@@ -1,12 +1,11 @@
-const { Router } = require('express');
-const postActivities = require('../Handlers/postActivitiesHandler')
-const getActivities = require('../Handlers/ActivitiesHandler')
+ const { Router } = require('express');
+ const { getActivities } = require ('../Handlers/activityHandlers');
 
-const routesActivities = Router();
+ const routesActivities = Router();
 
-routesActivities.get('/' , getActivities);
-routesActivities.post('/' , postActivities );
-
+ routesActivities.get('/' , getActivities);
+// routesActivities.post('/' , postActivities );
 
 
-module.exports = routesActivities
+
+ module.exports = routesActivities
