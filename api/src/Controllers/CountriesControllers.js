@@ -1,25 +1,5 @@
 const axios = require ('axios')
-
 const { Activity , Country} = require('../db')
-
-const createActivityDB = async (id,name,image,continent,capital,subregion,area,population) => {
-    return await Country.create({id,name,image,continent,capital,subregion,area,population});
-}
-
-// const getCountryById = async (id,sourse) => {
-//     const country = 
-//     sourse  === "api"
-//       ? ( await axios.get(`https://restcountries.com/v3/all${id}`))
-//       .data
-//       : await Country.findByPk(id , {
-//         include: {
-//             model : Activity,
-//             attributes: ["name"]
-//         },
-//       })
-//       return country
-// };
-
 
 const infoCleaner = (array) => {
     return array.map((e) => {
@@ -36,8 +16,6 @@ const infoCleaner = (array) => {
         }
     })
 };
-
-
 
 const getAllCountries = async (name) => {
     const countryDB = await Country.findAll()
@@ -68,8 +46,6 @@ const getCountryByName = async (name) => {
 
 
 module.exports = {
-    
-    createActivityDB,
     getCountryByName,
     getAllCountries
 }

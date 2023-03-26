@@ -1,6 +1,4 @@
 const {
-    getCountryById,
-    createActivityDB,
     getCountryByName,
     getAllCountries
 } = require("../Controllers/CountriesControllers");
@@ -23,8 +21,7 @@ const getCountriesHandler = async (req,res) => {
 
 const getIdHandler = async (req,res) => {
 
- 
-  try{
+ try{
     const {id} = req.params;
     const totalCountries = await getAllCountries()
 
@@ -42,24 +39,3 @@ module.exports = {
    getCountriesHandler,
    getIdHandler
 } 
-
-
-
-
-
-
-
-
-
-
-
-// const {id} = req.params
-
-// const sourse = isNaN(id) ? "bdd" :"api";
-
-// try{
-//   const response = await getCountryById(id,sourse);
-//   res.status(200).json(response)
-// } catch (error) {
-//   res.status(400).json({error: error.message})
-// }

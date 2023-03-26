@@ -2,8 +2,6 @@
  const { getCountriesHandler } = require("../Handlers/CountriesHandlers");
  const { getIdHandler } = require('../Handlers/CountriesHandlers');
 
-
-
  const routesCountries = Router();
 
  routesCountries.get('/' , getCountriesHandler);
