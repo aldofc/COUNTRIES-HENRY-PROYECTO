@@ -6,11 +6,13 @@ import { useSelector } from 'react-redux'
 import Navbar from '../../Components/Navbar/Navbar'
 import Card from '../../Components/Card/Card'
 import { getCountries } from '../../Redux/Actions/index'
+import './Home.css'
+
 
 const Home = () => {
 
 const dispatch = useDispatch();
-const allCountries = useSelector(state=>state.countries)
+const countries = useSelector(state=>state.countries)
 
 useEffect(() => {
   dispatch(getCountries())
@@ -24,16 +26,14 @@ return (
     <Navbar />
     </div>
 
-    <div> 
-      {allCountries?.map(country=>{
-        return(
-          <Card id={country.id}
-                name={country.name}
-                image={country.image}
-                continent={country.continent}
-                key={country.id} />
-        )
-      })} </div>
+    <div className='CardsContainer'>{countries.map(country => {
+        return <Card 
+           id={country.id}
+           name={country.name}
+           image={country.image}
+           continent={country.continent}
+            />
+    })}</div>
     
     </div>
   )

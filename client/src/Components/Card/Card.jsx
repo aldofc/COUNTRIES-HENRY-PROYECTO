@@ -2,18 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
 
-const Card = (image , name , continent, id) => {
+const Card = (props) => {
   return (
-    <div className='cardContainer'>
-        <Link to={`/home/${id}`}>
-            <img src={image} alt="imagen" />
-        </Link>
-
-        <div>
-            <h3>{name}</h3>
-            <h5>CONTINENT: {continent}</h5>
+    <div className='card'>
+      <img className='imageCoontainer' src={props.image} alt="imagen" />
+      <div className="card-details">
+        <h3> Name : {props.name}</h3>
+        <h3>continent : {props.continent}</h3>
         </div>
-    
+        <Link to={`/home/${props.id}`}>
+          <button className="card-button">more info</button>
+        </Link>
     
     </div>
   )

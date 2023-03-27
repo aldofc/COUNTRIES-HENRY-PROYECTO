@@ -3,3 +3,14 @@
     height: 5vh;
     background-color: aquamarine;
 }
+
+
+.CardsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-items: stretch;
+    
+}
