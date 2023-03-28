@@ -1,9 +1,45 @@
-import React from 'react'
+import {React , useEffect } from 'react'
+import { getCountriesById , Loading } from '../../Redux/Actions'
+import {useDispatch,useSelector} from 'react-redux'
+import {useParams} from 'react-router-dom'
+import Loader from '../../Components/Loader/Loader'
 
 const Details = () => {
-  return (
-    <div>Details</div>
+
+const dispatch = useDispatch()
+const pais = useSelector((state) => state.countriesById)
+const loader = useSelector(state => state.loader)
+
+const {id} = useParams()
+
+useEffect(()=>{
+  dispatch(Loading())
+  dispatch(getCountriesById(id))
+  dispatch(Loading())
+},[dispatch])
+
+if(loader === true && pais[0] && pais[0].id == id) { 
+return (
+    <div>
+      <h2>{pais[0].name}</h2>
+      <div>
+        <img src={pais[0].image} alt="not found" />
+      </div>
+      <div>
+        <h3>id:</h3><p>{pais[0].id}</p>
+        <h3>continent:</h3><p>{pais[0].continent}</p>
+        <h3>capital:</h3><p>{pais[0].capital}</p>
+        <h3>subregion:</h3><p>{pais[0].subregion}</p>
+        <h3>area:</h3><p>{pais[0].area}</p>
+        <h3>population:</h3><p>{pais[0].population}</p>
+      </div>
+    </div>
   )
+}else{
+  return(
+    <Loader />
+  )
+}
 }
 
 export default Details
