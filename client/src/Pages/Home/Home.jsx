@@ -14,17 +14,17 @@ const Home = () => {
 const dispatch = useDispatch();
 const countries = useSelector(state=>state.countries)
 
+
 useEffect(() => {
   dispatch(getCountries())
-
 },[dispatch])
-
 
 return (
     <div>
-    <div>
+      <div>
     <Navbar />
     </div>
+   
 
     <div className='CardsContainer'>{countries.map(country => {
         return <Card 

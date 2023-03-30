@@ -1,0 +1,22 @@
+.actualCountriesContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.actualCountriesContainer img {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.selectedCountriesContainer{
+    display: flex;
+    justify-content: center;
+    margin-left: 35vw;
+    width: 30vw;
+    height: 10vh;
+    background-color: antiquewhite;
+}

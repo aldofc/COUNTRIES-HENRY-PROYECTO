@@ -1,6 +1,7 @@
 import {GET_COUNTRIES} from "../Actions/index"
 import { GET_COUNTRIES_BY_ID } from "../Actions/index";
 import { LOADER } from "../Actions/index";
+import { GET_COUNTRIES_BY_NAME } from "../Actions/index";
 
 const initialState = {
     countries :[],
@@ -22,6 +23,11 @@ function rootReducer( state = initialState , action){
                 ...state,
                 countriesById : action.payload,
             };
+            case GET_COUNTRIES_BY_NAME:
+                return{
+                    ...state,
+                    countries: action.payload,
+                };
             case LOADER:
                 const loader = state.loader
                 if( loader == true ) {
@@ -35,6 +41,7 @@ function rootReducer( state = initialState , action){
                         loader: true,
                     }
                 };
+                
         default: 
             return {...state}
    }
