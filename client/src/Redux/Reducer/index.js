@@ -2,10 +2,13 @@ import {GET_COUNTRIES} from "../Actions/index"
 import { GET_COUNTRIES_BY_ID } from "../Actions/index";
 import { LOADER } from "../Actions/index";
 import { GET_COUNTRIES_BY_NAME } from "../Actions/index";
+import { POST_ACTIVITY } from "../Actions/index";
+import { GET_ALL_ACTIVITIES } from "../Actions/index";
 
 const initialState = {
     countries :[],
     countriesById :{},
+    allActivities: [],
     loader:true,
     
     
@@ -28,6 +31,15 @@ function rootReducer( state = initialState , action){
                     ...state,
                     countries: action.payload,
                 };
+                case POST_ACTIVITY:
+            return {
+                ...state,
+            };
+            case GET_ALL_ACTIVITIES:
+            return {
+                ...state,
+                allActivities: action.payload
+            }
             case LOADER:
                 const loader = state.loader
                 if( loader == true ) {
