@@ -7,3 +7,13 @@
     justify-items: stretch;
     
 }
+
+
+.containerIzquierda{
+    display: inline-block;
+    float: left;
+    text-align: center;
+    border: #000000 1px solid;
+    
+    
+}

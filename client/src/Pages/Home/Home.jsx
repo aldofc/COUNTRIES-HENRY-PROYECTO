@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 //import { useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
+import NavbarFilters from '../../Components/NavbarFilters/NavbarFilters'
 import Card from '../../Components/Card/Card'
 import { getCountries } from '../../Redux/Actions/index'
 import './Home.css'
@@ -22,7 +23,16 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Navbar />
+        <Navbar /> 
+        
+      </div>
+
+      <div>
+        
+      </div>
+
+      <div className='containerIzquierda'>
+      <NavbarFilters />
       </div>
 
 
@@ -33,7 +43,11 @@ const Home = () => {
           image={country.image}
           continent={country.continent}
         />
-      })}</div>
+        
+      })}
+       
+        
+        </div>
 
     </div>
   )
