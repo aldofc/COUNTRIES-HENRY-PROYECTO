@@ -32,7 +32,7 @@ const Details = () => {
           <h3>subregion:</h3><p>{pais[0].subregion}</p>
           <h3>area:</h3><p>{pais[0].area}</p>
           <h3>population:</h3><p>{pais[0].population}</p>
-          <h3>activity</h3><p>{pais[0].activity}</p>
+          
         </div>
       </div>
     )
