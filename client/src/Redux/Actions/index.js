@@ -5,6 +5,12 @@ export const GET_COUNTRIES_BY_ID = 'GET_COUNTRIES_BY_ID'
 export const GET_COUNTRIES_BY_NAME = 'GET_COUNTRIES_BY_NAME'
 export const GET_ALL_ACTIVITIES = 'GET_ALL_ACTIVITIES'
 export const POST_ACTIVITY = 'POST_ACTIVITY'
+export const SORT_BY_NAME = 'SORT_BY_NAME'
+//export const BY_NAME_ASC = 'BY_NAME_ASC'
+//export const BY_NAME_DESC = 'BY_NAME_DESC'
+export const FILTER_COUNTRIES = 'FILTER_COUNTRIES'
+export const CLEAN_COUNTRY_ID = 'CLEAN_COUNTRY_ID'
+export const CLEAN = 'CLEAN'
 export const LOADER = 'LOADER'
 
 
@@ -69,6 +75,50 @@ export function postActivity(payload) {
         };
     };
 };
+
+
+
+
+
+
+// export function filterByNameAsc(){
+//     return async function(dispatch){
+//         try{
+//             const response = await axios.get('/filters/asc')
+//             return dispatch({
+//                 type: BY_NAME_ASC,
+//                 payload: response.data
+//             })
+//         }catch (error){
+//             console.log('Error en la accion de filtro por asc' + error)
+//         }
+//     }
+// }
+
+// export function filterByNameDesc(){
+//     return async function(dispatch){
+//         try{
+//             const response = await axios.get('/filters/desc')
+//             return dispatch({
+//                 type: BY_NAME_DESC,
+//                 payload: response.data
+//             })
+//         }catch(error){
+//             console.log('error en la accion filtro desc' + error)
+//         }
+//     }
+// }
+
+export function orderByName(payload){
+    return({
+        type: SORT_BY_NAME,
+        payload
+    })
+}
+
+
+
+
 
 
 
