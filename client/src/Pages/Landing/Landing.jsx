@@ -10,6 +10,7 @@ const Landing = () => {
     <Link to={'/home'}>
     <button>Home</button>
     </Link>
+    <button>oa</button>
 
 
     </div>
