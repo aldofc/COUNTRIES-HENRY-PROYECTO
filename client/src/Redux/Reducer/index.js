@@ -1,4 +1,4 @@
-import {getCountriesById, GET_COUNTRIES} from "../Actions/index"
+import {getCountriesById, GET_COUNTRIES, SORT_BY_ASC_OR_DESC} from "../Actions/index"
 import { GET_COUNTRIES_BY_ID } from "../Actions/index";
 import { LOADER } from "../Actions/index";
 import { GET_COUNTRIES_BY_NAME } from "../Actions/index";
@@ -7,6 +7,7 @@ import { GET_ALL_ACTIVITIES } from "../Actions/index";
 //import { BY_NAME_ASC } from "../Actions/index";
 //import { BY_NAME_DESC } from "../Actions/index";
 import { SORT_BY_NAME } from "../Actions/index";
+
 
 
 const initialState = {
@@ -67,18 +68,31 @@ function rootReducer( state = initialState , action){
                     ...state,
                     countries: ordenado
                 };
+                case SORT_BY_ASC_OR_DESC:
+                    let sortAsc = action.payload === "hasc" ?
+                    state.countries.sort(function(a,b){
+                        if(a.population > b.population){
+                            return 1
+                        }
+                        if(b.population > a.population){
+                            return -1
+                        }
+                        return 0
+                    }) : state.countries.sort(function(a,b){
+                        if(a.population > b.population){
+                            return -1
+                        } 
+                        if(b.population > a.population){
+                            return -1
+                        } return 0
+                    })
+                    return{
+                        ...state,
+                        countries: sortAsc
+                    };
                 
                     
-            // case BY_NAME_ASC:
-            //     return{
-            //         ...state,
-            //         countries: action.payload
-            //     };
-            //     case BY_NAME_DESC:
-            //         return{
-            //             ...state,
-            //             countries: action.payload
-            //         }
+            
             case LOADER:
                 const loader = state.loader
                 if( loader == true ) {

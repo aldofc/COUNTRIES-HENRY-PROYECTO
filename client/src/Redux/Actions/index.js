@@ -10,6 +10,7 @@ export const SORT_BY_NAME = 'SORT_BY_NAME'
 //export const BY_NAME_DESC = 'BY_NAME_DESC'
 export const FILTER_COUNTRIES = 'FILTER_COUNTRIES'
 export const CLEAN_COUNTRY_ID = 'CLEAN_COUNTRY_ID'
+export const SORT_BY_ASC_OR_DESC = 'SORT_BY_ASC_OR_DESC'
 export const CLEAN = 'CLEAN'
 export const LOADER = 'LOADER'
 
@@ -112,6 +113,13 @@ export function postActivity(payload) {
 export function orderByName(payload){
     return({
         type: SORT_BY_NAME,
+        payload
+    })
+}
+
+export function orderByAscOrDesc(payload){
+    return({
+        type: SORT_BY_ASC_OR_DESC,
         payload
     })
 }

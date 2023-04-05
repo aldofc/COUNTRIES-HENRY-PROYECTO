@@ -8,7 +8,7 @@ import Navbar from '../../Components/Navbar/Navbar'
 import Card from '../../Components/Card/Card'
 import { getCountries } from '../../Redux/Actions/index'
 import Paginado from '../../Components/Paginado/Paginado'
-import { orderByName } from "../../Redux/Actions";
+import { orderByName, orderByAscOrDesc } from "../../Redux/Actions";
 
 
 import './Home.css'
@@ -19,15 +19,15 @@ const Home = () => {
   const dispatch = useDispatch();
   const countries = useSelector(state => state.countries)
 
- 
 
-  
+
+
   //const [orden, setOrden] = useState('')
   //const [searchString, setSearchString] = useState("");
   const [orden, setOrden] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
 
- 
+
 
   const countriesPerPage = 10;
   const lastCardIndex = currentPage * countriesPerPage
@@ -55,8 +55,14 @@ const Home = () => {
 
   }
 
+  function handleSortPopulation(e) {
+    e.preventDefault();
+    dispatch(orderByAscOrDesc(e.target.value))
+    setOrden(`Ordenado ${e.target.value}`)
+  }
 
-  
+
+
 
   return (
     <div>
@@ -96,12 +102,12 @@ const Home = () => {
 
 
 
-            <select >
-              <option value="none"> ORDER BY POPULATION </option>
-               <option value=""> asc </option>
-               <option value="">desc</option>
-             
-              
+            <select onChange={e => handleSortPopulation(e)}>
+              <option value=""> ORDER BY POPULATION </option>
+              <option value="hdesc">HIGHER TO LESS </option>
+              <option value="hasc">MINOR TO MAJOR</option>
+
+
             </select>
 
 
