@@ -26,3 +26,127 @@
 }
 
 
+
+
+.content-select{
+	
+	position:relative;
+    display: flex;
+    bottom: -1vh;
+    
+    
+   
+}
+ 
+.content-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 1vh;
+  	height: 42px;
+  	outline: 0; 
+  	border: 1px;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+    
+}
+ 
+.content-select select:hover{
+	background-color:navajowhite;
+}
+ 
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.content-select i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 13px);
+	width: 100px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #2AC176;
+	border-bottom:4px solid #2AC176;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+ 
+.content-select:hover i{
+	margin-top: 3px;
+}
+
+
+
+
+.checkbtn{
+    color: red;
+    float: left;
+    font-size: 30px;
+    line-height: -10px;
+   
+   cursor: pointer;
+   display: none;
+}
+#check{
+    display: none;
+}
+section{
+    background: url('../../Images/home.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+@media (max-width: 950px){
+
+
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: absolute;
+        width: 100%;
+        height: 10.1vh;
+        background-color:#7b7b7b;
+        top: 15.5vh;
+        left: -110%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul select{
+        display: block;
+        margin: 100px 0;
+        
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    .CardsContainer{
+        margin-top: 7vh;
+       
+    }
+    .content-select{
+      
+        bottom: 9vh;
+        margin-right: 10vw;
+       
+    }
+
+    
+
+}

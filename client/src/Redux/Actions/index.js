@@ -13,6 +13,8 @@ export const CLEAN_COUNTRY_ID = 'CLEAN_COUNTRY_ID'
 export const SORT_BY_ASC_OR_DESC = 'SORT_BY_ASC_OR_DESC'
 export const CLEAN = 'CLEAN'
 export const LOADER = 'LOADER'
+export const SELECT_CONTINENT = 'SELECT_CONTINENT'
+export const BY_CONTINENT = 'BY_CONTINENT'
 
 
 export function getCountries() {
@@ -124,6 +126,26 @@ export function orderByAscOrDesc(payload){
     })
 }
 
+export function selectContinent(payload){
+    return({
+        type: SELECT_CONTINENT,
+        payload
+    })
+}
+
+export function filterByContinent(payload) {
+    return async function (dispatch) {
+        try {
+            var json = await axios.get(`/filters/continent/${payload}`)
+            return dispatch({
+                type: BY_CONTINENT,
+                payload: json.data
+            })
+        } catch (error) {
+            console.log('Error action filterByContinent ' + error)
+        };
+    };
+};
 
 
 

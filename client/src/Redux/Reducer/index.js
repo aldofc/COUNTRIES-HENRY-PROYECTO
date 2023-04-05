@@ -1,4 +1,4 @@
-import {getCountriesById, GET_COUNTRIES, SORT_BY_ASC_OR_DESC} from "../Actions/index"
+import {getCountriesById, GET_COUNTRIES, SORT_BY_ASC_OR_DESC , SELECT_CONTINENT, BY_CONTINENT } from "../Actions/index"
 import { GET_COUNTRIES_BY_ID } from "../Actions/index";
 import { LOADER } from "../Actions/index";
 import { GET_COUNTRIES_BY_NAME } from "../Actions/index";
@@ -14,6 +14,7 @@ const initialState = {
     countries :[],
     countriesById :{},
     allActivities: [],
+    backUpCountries: [],
     loader:true,
     
     
@@ -25,6 +26,7 @@ function rootReducer( state = initialState , action){
         return{
             ...state,
             countries: action.payload,
+            backUpCountries: action.payload
         };
         case GET_COUNTRIES_BY_ID:
             return{
@@ -90,6 +92,19 @@ function rootReducer( state = initialState , action){
                         ...state,
                         countries: sortAsc
                     };
+                    case SELECT_CONTINENT:
+                        let {continent , filterByName} = action.payload
+                        if(continent && continent !== 'ALL') filterByName = filterByName.filter((c) => c.continent === continent)
+
+                        return{
+                            countriesByContinent: []
+                        };
+                        case BY_CONTINENT:
+            return {
+                ...state,
+                countries: action.payload
+            }
+
                 
                     
             

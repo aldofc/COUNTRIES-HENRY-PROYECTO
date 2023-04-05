@@ -4,49 +4,34 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
-//import NavbarFilters from '../../Components/NavbarFilters/NavbarFilters'
+
+
 import Card from '../../Components/Card/Card'
 import { getCountries } from '../../Redux/Actions/index'
 import Paginado from '../../Components/Paginado/Paginado'
 import { orderByName, orderByAscOrDesc } from "../../Redux/Actions";
-
-
 import './Home.css'
 
-
-const Home = () => {
+  const Home = () => {
 
   const dispatch = useDispatch();
   const countries = useSelector(state => state.countries)
 
-
-
-
-  //const [orden, setOrden] = useState('')
-  //const [searchString, setSearchString] = useState("");
   const [orden, setOrden] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
-
-
 
   const countriesPerPage = 10;
   const lastCardIndex = currentPage * countriesPerPage
   const firstCardIndex = lastCardIndex - countriesPerPage
   const currentCountries = countries.slice(firstCardIndex, lastCardIndex)
 
-
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
 
-
-
   useEffect(() => {
     dispatch(getCountries())
   }, [dispatch])
-
-
-
 
   function handlerSortName(e) {
     e.preventDefault();
@@ -61,26 +46,54 @@ const Home = () => {
     setOrden(`Ordenado ${e.target.value}`)
   }
 
-
-
-
   return (
+   
     <div>
+     
       <div>
         <Navbar />
 
       </div>
+      
+
+
+     
+     
+      <section>
+
+      <div >
+     
+     
+     
+        <div >
+       
+       
+        
+
+
+     
+<nav>
+  
 
 
 
-
-      <div className='cointainerIzquierda'>
-
-        <div className='ContainerLeft'>NavbarFilters
-
-
-          <div>
+            <input type="checkbox" id='check' />
+            <label htmlFor="check" className='checkbtn'>
+                 filtros
+            </label>
+            
+            
+           
+          
+        
+            <ul>
+        <div className='content-select'>
+        
+        
+          
+        
             <select >
+             
               <option value=""> ORDER BY CONTINENT </option>
               <option value="">ALL</option>
               <option value="">AFRICA</option>
@@ -90,54 +103,74 @@ const Home = () => {
               <option value="">SOUTH AMERICA</option>
               <option value="">NORTH AMERICA</option>
               <option value="">OCEANIA</option>
+             
             </select>
+            
+            
 
 
-            <select onChange={e => handlerSortName(e)}>
+            <select   onChange={e => handlerSortName(e)}>
+            
               <option> ALPHABETICAL ORDER </option>
               <option value="asc">A-Z</option>
               <option value="desc">Z-A</option>
+             
             </select>
 
 
 
 
-            <select onChange={e => handleSortPopulation(e)}>
+            <select  onChange={e => handleSortPopulation(e)}>
+           
               <option value=""> ORDER BY POPULATION </option>
               <option value="hdesc">HIGHER TO LESS </option>
               <option value="hasc">MINOR TO MAJOR</option>
+             
 
 
             </select>
+           
 
 
 
 
             <select >
+           
               <option value=""> ORDER BY ACTIVITY </option>
               <option value="">ALL</option>
               <option value="">TEST</option>
+              
             </select>
+           
+           
+           
+
+           
+           
+          
+           
 
 
           </div>
+         
+          </ul>
+          </nav>
+         
+         
+         
+          
         </div>
+        
+        
+       
+       
+</div>
 
 
-
-      </div>
-
-      <div >
-
-        <Paginado
-          currentPage={currentPage}
-          countriesPerPage={countriesPerPage}
-          countries={countries.length}
-          paginado={paginado} />
-      </div>
+     
 
 
-      <div className='CardsContainer'>{currentCountries.map(country => {
+<div className='CardsContainer'>{currentCountries.map(country => {
         return <Card
           id={country.id}
           name={country.name}
@@ -149,6 +182,27 @@ const Home = () => {
 
 
       </div>
+     
+     
+     
+     
+     
+
+      <div>
+     
+      
+
+<Paginado
+  currentPage={currentPage}
+  countriesPerPage={countriesPerPage}
+  countries={countries.length}
+  paginado={paginado} />
+</div>
+</section>
+
+
+
+     
 
 
 
