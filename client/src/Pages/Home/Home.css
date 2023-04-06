@@ -3,7 +3,7 @@
     justify-content: space-evenly;
     align-content: center;
     flex-wrap: wrap;
-    margin: 2vw;
+    
     justify-items: stretch;
     
 }
@@ -19,11 +19,6 @@
 }
 
 
-.ContainerLeft{
-        width: 15vw;
-        height: 100vh;
-        background-color: bisque;
-}
 
 
 
@@ -32,7 +27,11 @@
 	
 	position:relative;
     display: flex;
-    bottom: -1vh;
+    bottom: -2vh;
+    margin-bottom: 5vh;
+    width: 90vw;
+    margin-left: 5vw;
+    
     
     
    
@@ -89,18 +88,10 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
 
 
 
-.checkbtn{
-    color: red;
-    float: left;
-    font-size: 30px;
-    line-height: -10px;
+
    
-   cursor: pointer;
-   display: none;
-}
-#check{
-    display: none;
-}
+
+
 section{
     background: url('../../Images/home.jpg') no-repeat;
     background-size: cover;
@@ -114,39 +105,26 @@ section{
 }
 
 @media (max-width: 858px){
-    .checkbtn{
-        display: block;
-    }
-    ul{
-        position: absolute;
-        width: 100%;
-        height: 10.1vh;
-        background-color:#7b7b7b;
-        top: 15.5vh;
-        left: -110%;
-        text-align: center;
-        transition: all .5s;
+    
+
+    section{
+        background-size: cover;
+    background-position: center center;
+    height: 455vh;
+
     }
 
-    nav ul select{
-        display: block;
-        margin: 100px 0;
+    .content-select{
+        width: 80vw;
+        padding: 5vh;
+        justify-content: center;
+        text-align: center;
         
     }
-    #check:checked ~ ul {
-        left: 0;
-    }
-    .CardsContainer{
-        margin-top: 7vh;
-       
-    }
-    .content-select{
-      
-        bottom: 9vh;
-        margin-right: 10vw;
-       
-    }
 
+    
+
+    
     
 
 }

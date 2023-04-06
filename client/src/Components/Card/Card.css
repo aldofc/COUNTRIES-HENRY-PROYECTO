@@ -66,6 +66,20 @@
     border-radius: 1.5vw;
    
    }
+
+   @media (max-width: 858px){  /*telefono*/
+    .card{
+
+        width: 90vw;
+        height: 36vh;
+    }
+   }
+
+
+   
+
+
+   
        
    
 

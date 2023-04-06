@@ -46,11 +46,20 @@ import './Home.css'
     setOrden(`Ordenado ${e.target.value}`)
   }
 
+
+  function handleCLick(e) {
+
+    e.preventDefault()
+    //dispatch(Loading())
+    dispatch(getCountries())
+   // dispatch(Loading())
+  }
+
   return (
    
     <div>
      
-      <div>
+      <div className='nabvar'>
         <Navbar />
 
       </div>
@@ -77,16 +86,13 @@ import './Home.css'
 
 
 
-            <input type="checkbox" id='check' />
-            <label htmlFor="check" className='checkbtn'>
-                 filtros
-            </label>
+            
             
             
            
           
         
-            <ul>
+           
         <div className='content-select'>
         
         
@@ -141,6 +147,9 @@ import './Home.css'
               <option value="">TEST</option>
               
             </select>
+
+
+            <button onClick={ e => {handleCLick(e)}}>reset</button>
            
            
            
@@ -153,7 +162,7 @@ import './Home.css'
 
           </div>
          
-          </ul>
+         
           </nav>
          
          
