@@ -9,6 +9,7 @@ const Landing = () => {
 
     <Link to={'/home'}>
     <button>Home</button>
+    <button>hola</button>
     </Link>
     
 
