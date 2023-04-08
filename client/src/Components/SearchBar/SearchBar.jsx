@@ -2,6 +2,7 @@
  import { useState } from "react";
  import { useDispatch,useSelector } from "react-redux";
  import { getCountriesByName } from '../../Redux/Actions';
+ import './SearchBar.css'
 
  const SearchBar = () => {
 

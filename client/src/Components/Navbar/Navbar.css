@@ -2,27 +2,75 @@
 .containerNav{
     display: flex;
     
-    width: 41vw;
-    height: 12vh;
+    width: 55vw;
+    height: 15vh;
     background-color: aqua;
   
    
     
 }
 
+.button {
+ 
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #FF0072;
+  border-radius: 2px;
+  margin-left: 1vw;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #FF0072;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #FF0072;
+  z-index: -1;
+}
+
+.button:hover, .button:focus {
+  color: white;
+}
+
+.button:hover:before, .button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
 .containerderecha{
     
    position: absolute;
    right: -17px;
-    width: 60vw;
-    height: 12vh;
+    width: 50vw;
+    height: 15vh;
     background-color: brown;
 }
 
 .posicionItems{
     display: flex;
     flex-direction:row;
-    margin-left: 1vw;
+   
     margin-top: 1vw;
 
 }
@@ -124,16 +172,65 @@
 
 .containerItems2{
     display: flex;
-    justify-content: end;
+   
    
     
 }
 
 
 .botonabout{
-    width: 5vw;
-    height: 3vh;
+    height: 7vh;
+   
     margin-top: 1vw;
-    margin-right: 18vw;
+    
+    margin-left: 5vw;
+   
+}
+
+
+.botonabout {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #FF0072;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #FF0072;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.botonabout:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #FF0072;
+  z-index: -1;
+}
+
+.botonabout:hover, .botonabout:focus {
+  color: white;
+}
+
+.botonabout:hover:before, .botonabout:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.botonabout:active {
+  transform: scale(0.9);
 }
 

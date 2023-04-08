@@ -17,7 +17,7 @@ const Navbar = ({handleChange , handleSubmit}) => {
       <SearchBar />
      
       <Link to={'/create'}>
-      <button>CREATE ACTIVITY</button>
+      <button className='button'>CREATE ACTIVITY</button>
       </Link>
       </div>
 
