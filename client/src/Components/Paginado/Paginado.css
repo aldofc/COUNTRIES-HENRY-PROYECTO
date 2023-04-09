@@ -1,8 +1,8 @@
 .containerPaginado{
-   position: absolute;
-   padding: 2vw;
-   left: 10%;
-   right: 10%;
+   display: flex;
+   padding: 0.9vw;
+   justify-content: center;
+  
 }
 
 

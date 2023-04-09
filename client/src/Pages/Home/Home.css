@@ -93,10 +93,11 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
 
 
 section{
-    background: url('../../Images/home.jpg') no-repeat;
+    background: url('https://images4.alphacoders.com/758/thumb-1920-75886.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    height: 102vh;
+    width: 100vw;
     
 }
 

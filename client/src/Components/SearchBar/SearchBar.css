@@ -101,3 +101,14 @@
     width: 1.3em;
     fill: #b4b4b4;
   }
+
+
+  @media (max-width: 858px){
+    .search__input{
+      display: flex;
+      width: 80vw;
+      
+      
+     
+    }
+  }
