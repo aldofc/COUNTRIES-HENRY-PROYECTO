@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 
 
-const { getContinent }= require('../Controllers/FilterController')
+const { getContinent }= require('../Controllers/CountriesControllers')
 
 const routerFilter = Router();
 
