@@ -27,3 +27,6 @@ const Paginado = ({ countriesPerPage, countries, paginado, currentPage }) => {
 }
 
 export default Paginado
+
+
+

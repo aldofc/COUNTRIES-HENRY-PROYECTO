@@ -14,14 +14,14 @@ const Home = () => {
 
   const [orden, setOrden] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
-  const [maxPaginado, setMaxPaginado] = useState()
-  const [minPaginado, setMinPaginado] = useState()
+ 
 
   const countriesPerPage = 10;
   const lastCardIndex = currentPage * countriesPerPage
   const firstCardIndex = lastCardIndex - countriesPerPage
   const currentCountries = countries.slice(firstCardIndex, lastCardIndex)
 
+ 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
@@ -142,6 +142,8 @@ const Home = () => {
         </div>
 
         <div>
+
+          
 
           <Paginado
             currentPage={currentPage}
