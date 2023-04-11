@@ -1,6 +1,22 @@
-const {Activity} = require('../db');
+const { Activity, Country } = require('../db');
 
-const createDB = async (name,difficulty,duration,season) => 
-    await Activity.create({name,difficulty,duration,season}); //devuelve una promesa por eso lleva await
+const createDB = async (name, difficulty, duration, season, countries) => {
 
-module.exports={createDB}
+    const activity = await Activity.create({
+        name,
+        difficulty,
+        duration,
+        season
+
+    });
+
+    let concatCountry = await Country.findAll({
+        where: { name: countries }
+    });
+
+    activity.addCountry(concatCountry);
+    return activity
+
+}
+
+module.exports = { createDB }

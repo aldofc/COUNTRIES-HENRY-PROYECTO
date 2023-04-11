@@ -8,37 +8,37 @@ import Instagram from '../../Images/instagram5.jpg'
 import './Navbar.css'
 
 
-const Navbar = ({handleChange , handleSubmit}) => {
+const Navbar = ({ handleChange, handleSubmit }) => {
   return (
-    
+
     <div className='containerNav'>
-     
-     <div className='posicionItems'>
-      <SearchBar />
-      <br></br>
-     
-      <Link to={'/create'}>
-      <button className='button'>CREATE ACTIVITY</button>
-      </Link>
+
+      <div className='posicionItems'>
+        <SearchBar />
+        <br></br>
+
+        <Link to={'/create'}>
+          <button className='button'>CREATE ACTIVITY</button>
+        </Link>
       </div>
-      
+
 
       <div className='containerderecha'>
 
         <div className='containerItems2'>
 
 
-       
-          {/* <button className='botonabout'>about me</button> */}
-      
-        
 
-      
-       
-    </div>
-       
+          {/* <button className='botonabout'>about me</button> */}
+
+
+
+
+
+        </div>
+
       </div>
-     
+
     </div>
   )
 }

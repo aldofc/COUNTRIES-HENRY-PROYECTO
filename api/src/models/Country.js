@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
     },
 
     subregion: {
-      type: DataTypes.STRING,  
+      type: DataTypes.STRING,
     },
 
     area: {
@@ -42,8 +42,8 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER
     }
   },
-  {
-        timestamps:false
+    {
+      timestamps: false
     });
-  };
-  
+};
+

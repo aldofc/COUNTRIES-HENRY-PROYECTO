@@ -1,10 +1,10 @@
-const axios = require ('axios')
-const { Activity , Country} = require('../db')
+const axios = require('axios')
+const { Activity, Country } = require('../db')
 
 const infoCleaner = (array) => {
     return array.map((e) => {
         return {
-            id:e.cca3,
+            id: e.cca3,
             name: e.name.common,
             image: e.flags[0],
             continent: e.continents[0],
@@ -12,7 +12,7 @@ const infoCleaner = (array) => {
             subregion: e.subregion,
             area: e.area,
             population: e.population,
-            
+
         }
     })
 };
@@ -39,9 +39,9 @@ const getCountryByName = async (name) => {
 
     const countryFiltered = countryApi.filter((country) => country.name === name);
 
-    const countryDB = await Country.findAll({where: {name: name}});
+    const countryDB = await Country.findAll({ where: { name: name } });
 
-    return [...countryFiltered , ...countryDB];
+    return [...countryFiltered, ...countryDB];
 }
 
 

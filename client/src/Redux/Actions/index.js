@@ -6,50 +6,44 @@ export const GET_COUNTRIES_BY_NAME = 'GET_COUNTRIES_BY_NAME'
 export const GET_ALL_ACTIVITIES = 'GET_ALL_ACTIVITIES'
 export const POST_ACTIVITY = 'POST_ACTIVITY'
 export const SORT_BY_NAME = 'SORT_BY_NAME'
-
-
 export const CLEAN_COUNTRY_ID = 'CLEAN_COUNTRY_ID'
 export const SORT_BY_ASC_OR_DESC = 'SORT_BY_ASC_OR_DESC'
 export const CLEAN = 'CLEAN'
 export const LOADER = 'LOADER'
 export const SORT_CONTINENT = 'SORT_CONTINENT'
 
-
-
-
-
 export function getCountries() {
-    return async function(dispatch){
+    return async function (dispatch) {
         const response = await axios.get('http://localhost:3001/countries')
         return dispatch({
-            type : GET_COUNTRIES,
+            type: GET_COUNTRIES,
             payload: response.data
         })
     }
 }
 
 export function getCountriesById(id) {
-    return async function(dispatch){
+    return async function (dispatch) {
         const response = await axios.get(`http://localhost:3001/countries/${id}`)
         return dispatch({
-            type : GET_COUNTRIES_BY_ID,
-            payload : response.data
+            type: GET_COUNTRIES_BY_ID,
+            payload: response.data
         })
     }
 }
 
-export function getCountriesByName(payload){
-    return async function(dispatch){
-        try { 
-        const response = await axios.get('http://localhost:3001/countries?name='+payload)
-        return dispatch({
-            type: GET_COUNTRIES_BY_NAME,
-            payload: response.data
-        })
-    } catch (error) {
-        alert('not found country')
+export function getCountriesByName(payload) {
+    return async function (dispatch) {
+        try {
+            const response = await axios.get('http://localhost:3001/countries?name=' + payload)
+            return dispatch({
+                type: GET_COUNTRIES_BY_NAME,
+                payload: response.data
+            })
+        } catch (error) {
+            alert('not found country')
+        }
     }
-}
 }
 
 export function getAllActivities() {
@@ -80,39 +74,29 @@ export function postActivity(payload) {
     };
 };
 
-
-
-export function orderByName(payload){
-    return({
+export function orderByName(payload) {
+    return ({
         type: SORT_BY_NAME,
         payload
     })
 }
 
-export function orderByAscOrDesc(payload){
-    return({
+export function orderByAscOrDesc(payload) {
+    return ({
         type: SORT_BY_ASC_OR_DESC,
         payload
     })
 }
 
 
-export function filterContinent(payload){
-    return({
+export function filterContinent(payload) {
+    return ({
         type: SORT_CONTINENT,
         payload
     })
 }
 
-
-
-
-
-
-
-
-
-export function Loading(){
-    return {type:LOADER};
+export function Loading() {
+    return { type: LOADER };
 }
 

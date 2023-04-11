@@ -1,15 +1,14 @@
-import { GET_COUNTRIES, SORT_BY_ASC_OR_DESC } from "../Actions/index"
-import { GET_COUNTRIES_BY_ID } from "../Actions/index";
-import { LOADER } from "../Actions/index";
-import { GET_COUNTRIES_BY_NAME } from "../Actions/index";
-import { POST_ACTIVITY } from "../Actions/index";
-import { GET_ALL_ACTIVITIES } from "../Actions/index";
-
-import { SORT_BY_NAME } from "../Actions/index";
-
-import { SORT_CONTINENT } from "../Actions/index";
-
-
+import {
+    GET_COUNTRIES,
+    SORT_BY_ASC_OR_DESC,
+    GET_COUNTRIES_BY_ID,
+    LOADER,
+    GET_COUNTRIES_BY_NAME,
+    POST_ACTIVITY,
+    GET_ALL_ACTIVITIES,
+    SORT_BY_NAME,
+    SORT_CONTINENT
+} from "../Actions/index"
 
 
 const initialState = {

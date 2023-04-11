@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { getCountries } from '../../Redux/Actions'
 import { postActivity } from '../../Redux/Actions/index'
 import { useHistory } from 'react-router-dom'
-
 import validate from "./Validate";
 
 
 function Create() {
   const dispatch = useDispatch()
   const countries = useSelector(state => state.countries)
+
 
   const history = useHistory();
 

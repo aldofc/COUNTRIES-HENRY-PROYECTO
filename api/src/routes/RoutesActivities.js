@@ -1,10 +1,10 @@
- const { Router } = require('express');
- const { getActivities } = require ('../Handlers/activityHandlers');
- const { createActivity }=require('../Handlers/activityHandlers');
+const { Router } = require('express');
+const { getActivities } = require('../Handlers/activityHandlers');
+const { createActivity } = require('../Handlers/activityHandlers');
 
- const routesActivities = Router();
+const routesActivities = Router();
 
- routesActivities.get('/' , getActivities);
- routesActivities.post('/' , createActivity );
+routesActivities.get('/', getActivities);
+routesActivities.post('/', createActivity);
 
- module.exports = routesActivities
+module.exports = routesActivities

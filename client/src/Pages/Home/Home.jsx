@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Navbar from '../../Components/Navbar/Navbar'
 import Card from '../../Components/Card/Card'
-import { getCountries, orderByName, orderByAscOrDesc, filterContinent } from '../../Redux/Actions/index'
+import { getCountries, orderByName, orderByAscOrDesc, filterContinent, Loading } from '../../Redux/Actions/index'
 import Paginado from '../../Components/Paginado/Paginado'
+import Loader from '../../Components/Loader/Loader'
 import './Home.css'
 
 const Home = () => {
@@ -13,8 +14,8 @@ const Home = () => {
 
   const [orden, setOrden] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
-  const [ maxPaginado , setMaxPaginado ] = useState()
-  const [ minPaginado , setMinPaginado] = useState()
+  const [maxPaginado, setMaxPaginado] = useState()
+  const [minPaginado, setMinPaginado] = useState()
 
   const countriesPerPage = 10;
   const lastCardIndex = currentPage * countriesPerPage
@@ -26,7 +27,11 @@ const Home = () => {
   }
 
   useEffect(() => {
+
+    dispatch(Loading())
     dispatch(getCountries())
+    dispatch(Loading())
+
   }, [dispatch])
 
   function handlerSortName(e) {
@@ -57,7 +62,9 @@ const Home = () => {
 
   return (
 
+
     <div>
+
 
       <div className='nabvar'>
         <Navbar />
@@ -109,7 +116,9 @@ const Home = () => {
                 </select>
 
 
-                <button onClick={e => { handleCLick(e) }}>reset</button>
+                <button className='buttonReset' onClick={e => { handleCLick(e) }}>
+                  reset
+                </button>
 
               </div>
 
@@ -145,5 +154,4 @@ const Home = () => {
     </div>
   )
 }
-
 export default Home

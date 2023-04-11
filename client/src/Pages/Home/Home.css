@@ -1,134 +1,154 @@
-.CardsContainer{
+.CardsContainer {
     display: flex;
-    
+
     justify-content: space-evenly;
     align-content: center;
     flex-wrap: wrap;
     justify-items: stretch;
-    
 }
 
-
-.cointainerIzquierda{
+.cointainerIzquierda {
     display: inline-block;
     float: left;
     text-align: center;
     border: #000000 1px solid;
-    
-    
+}
+
+
+
+.buttonReset {
+
+    width: 9em;
+    height: 3em;
+    border-radius: 20em;
+    font-size: 15px;
+    font-family: inherit;
+    color: #ffffff;
+    border: 1px;
+    border-color: black;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: rgb(51, 60, 60);
+
+    margin-left: 0.5vw;
+}
+
+.buttonReset::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(90, 85, 78, 0.422);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+
+}
+
+.buttonReset:hover::before {
+    width: 9em;
 }
 
 
 
 
+.content-select {
 
-
-.content-select{
-	
-	position:relative;
+    position: relative;
     display: flex;
     bottom: -2vh;
     margin-bottom: 5vh;
     width: 90vw;
     margin-left: 5vw;
-    
-    
-    
-   
+
 }
- 
-.content-select select{
-	display: inline-block;
-	width: 100%;
-	cursor: pointer;
-  	padding: 1vh;
-  	height: 42px;
-  	outline: 0; 
-  	border: 1px;
-	border-radius: 0;
-	background: #f0f0f0;
-	color: #7b7b7b;
-	font-size: 1em;
-	color: #999;
-	font-family: 
-	'Quicksand', sans-serif;
-	border:2px solid rgba(0,0,0,0.2);
+
+.content-select select {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 1vh;
+    height: 42px;
+    outline: 0;
+    border: 1px;
+    border-radius: 0;
+    background-color: rgb(51, 60, 60);
+    color: #7b7b7b;
+    font-size: 1em;
+    color: #ffffff;
+    font-family:
+        'Quicksand', sans-serif;
+    border: 2px solid rgba(225, 224, 224, 0.2);
+    margin: .3vw;
     border-radius: 12px;
     position: relative;
     transition: all 0.25s ease;
-    
 }
- 
-.content-select select:hover{
-	background-color:navajowhite;
+
+.content-select select:hover {
+    background-color: rgba(90, 85, 78, 0.422);
 }
- 
+
 /* 
 Creamos la fecha que aparece a la izquierda del select.
 Realmente este elemento es un cuadrado que sólo tienen
 dos bordes con color y que giramos con transform: rotate(-45deg);
 */
-.content-select i{
-	position: absolute;
-	right: 20px;
-	top: calc(50% - 13px);
-	width: 100px;
-	height: 16px;
-	display: block;
-	border-left:4px solid #2AC176;
-	border-bottom:4px solid #2AC176;
-	transform: rotate(-45deg); /* Giramos el cuadrado */
-	transition: all 0.25s ease;
-}
- 
-.content-select:hover i{
-	margin-top: 3px;
+.content-select i {
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 13px);
+    width: 100px;
+    height: 16px;
+    display: block;
+    border-left: 4px solid #2AC176;
+    border-bottom: 4px solid #2AC176;
+    transform: rotate(-45deg);
+    /* Giramos el cuadrado */
+    transition: all 0.25s ease;
 }
 
+.content-select:hover i {
+    margin-top: 3px;
+}
 
-
-
-
-   
-
-
-section{
+section {
     background: url('https://images4.alphacoders.com/758/thumb-1920-75886.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
     height: 102vh;
     width: 100vw;
-    
-}
-
-@media (max-width: 950px){
-
 
 }
 
-@media (max-width: 858px){
-    
+@media (max-width: 950px) {}
 
-    section{
+@media (max-width: 858px) {
+
+
+    section {
         background-size: cover;
-    background-position: center center;
-    height: 455vh;
+        background-position: center center;
+        height: 455vh;
+        width: 110vw;
 
     }
 
-    .content-select{
+    .content-select {
         width: 80vw;
         padding: 5vh;
         justify-content: center;
         text-align: center;
-        
+
     }
 
-    
 
-    
-    
+
+
+
 
 }
-
-

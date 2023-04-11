@@ -1,17 +1,16 @@
+.containerNav {
+  display: flex;
 
-.containerNav{
-    display: flex;
-    
-    width: 100vw;
-    height: 15vh;
-    background-color: rgb(51, 60, 60);
-  
-   
-    
+  width: 100vw;
+  height: 15vh;
+  background-color: rgb(51, 60, 60);
+
+
+
 }
 
 .button {
- 
+
   font-size: 18px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -43,11 +42,13 @@
   z-index: -1;
 }
 
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
   color: white;
 }
 
-.button:hover:before, .button:focus:before {
+.button:hover:before,
+.button:focus:before {
   transition: 0.5s all ease;
   left: 0;
   right: 0;
@@ -60,124 +61,124 @@
 
 
 
-.posicionItems{
-    display: flex;
-    flex-direction:row;
-   
-    margin-top: 1vw;
+.posicionItems {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 1vw;
 
 }
 
 
 .wrapper {
-    display: inline-flex;
-    list-style: none;
-    height: 120px;
-    width: 100%;
-   font-family: "Poppins", sans-serif;
-   margin-right: -45vw;
-   margin-top: 4.5vh;
-   
-    
-  }
-  
-  .wrapper .icon {
-    position: relative;
-    background: #fff;
-    border-radius: 50%;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  
-  .wrapper .tooltip {
-    position: absolute;
-    top: 0;
-    font-size: 14px;
-    background: #fff;
-    color: #fff;
-    padding: 5px 8px;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  
-  .wrapper .tooltip::before {
-    position: absolute;
-    content: "";
-    height: 8px;
-    width: 8px;
-    background: #fff;
-    bottom: -3px;
-    left: 50%;
-    transform: translate(-50%) rotate(45deg);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  
-  .wrapper .icon:hover .tooltip {
-    top: -45px;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-  
-  .wrapper .icon:hover span,
-  .wrapper .icon:hover .tooltip {
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-  }
-  
-  .wrapper .facebook:hover,
-  .wrapper .facebook:hover .tooltip,
-  .wrapper .facebook:hover .tooltip::before {
-    background: #1877F2;
-    color: #fff;
-  }
-  
-  .wrapper .twitter:hover,
-  .wrapper .twitter:hover .tooltip,
-  .wrapper .twitter:hover .tooltip::before {
-    background:#212121;
-    color: #fff;
-  }
-  
-  .wrapper .instagram:hover,
-  .wrapper .instagram:hover .tooltip,
-  .wrapper .instagram:hover .tooltip::before {
-    background:#e4007c;
-    color: #fff;
-  }
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  margin-right: -45vw;
+  margin-top: 4.5vh;
 
 
-  .logos{
-    width: 100%;
-    height: 100%;
 }
 
-.containerItems2{
-    display: flex;
-   
-   
-    
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #212121;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4007c;
+  color: #fff;
 }
 
 
-.botonabout{
-    height: 7vh;
-   
-    margin-top: 1vw;
-    
-    margin-left: 5vw;
-   
+.logos {
+  width: 100%;
+  height: 100%;
+}
+
+.containerItems2 {
+  display: flex;
+
+
+
+}
+
+
+.botonabout {
+  height: 7vh;
+
+  margin-top: 1vw;
+
+  margin-left: 5vw;
+
 }
 
 
@@ -212,11 +213,13 @@
   z-index: -1;
 }
 
-.botonabout:hover, .botonabout:focus {
+.botonabout:hover,
+.botonabout:focus {
   color: white;
 }
 
-.botonabout:hover:before, .botonabout:focus:before {
+.botonabout:hover:before,
+.botonabout:focus:before {
   transition: 0.5s all ease;
   left: 0;
   right: 0;
@@ -227,20 +230,20 @@
   transform: scale(0.9);
 }
 
-@media (max-width: 858px){
-  .containerNav{
+@media (max-width: 858px) {
+  .containerNav {
     display: flex;
-    width: 100vw;
+    width: 110vw;
     height: 20vh;
-    
+
   }
-  .posicionItems{
+
+  .posicionItems {
     display: flex;
     flex-direction: column;
-    margin-top: 1vh ;
+    margin-top: 1vh;
     justify-content: center;
     margin-left: 2.5vw;
-   
+
   }
 }
-

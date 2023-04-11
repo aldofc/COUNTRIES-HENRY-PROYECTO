@@ -9,11 +9,11 @@ const Card = (props) => {
       <div className="card-details">
         <h3> Name : {props.name}</h3>
         <h3>continent : {props.continent}</h3>
-        </div>
-        <Link to={`/home/${props.id}`}>
-          <button className="card-button">more info</button>
-        </Link>
-    
+      </div>
+      <Link to={`/home/${props.id}`}>
+        <button className="card-button">more info</button>
+      </Link>
+
     </div>
   )
 }

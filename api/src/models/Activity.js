@@ -20,19 +20,19 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        max : 5,
-        min : 1
+        max: 5,
+        min: 1
       }
     },
 
     duration: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate : {
+      validate: {
         max: 24,
         min: 1
       }
-      
+
     },
 
     season: {
@@ -40,6 +40,6 @@ module.exports = (sequelize) => {
       allowNull: false
     }
   }, {
-    timestamps:false
+    timestamps: false
   });
 };

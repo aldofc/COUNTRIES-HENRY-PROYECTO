@@ -1,31 +1,32 @@
 .card {
     width: 17vw;
-    height: 36vh;
+    height: 37vh;
     border-radius: 20px;
-    background: #f5f5f5;
+    background: #b5b1b1;
     position: relative;
-    
+
     margin-bottom: 3vh;
-    border: 2px solid #c3c6ce;
+    border: 3px solid rgb(51, 60, 60);
+    ;
     transition: 0.5s ease-out;
     overflow: visible;
-   }
-   
-   .card-details {
+}
+
+.card-details {
     color: black;
     height: 10%;
     gap: .5em;
-    
-    
-    
-   }
-   
-   .card-button {
+
+
+
+}
+
+.card-button {
     transform: translate(-50%, 125%);
     width: 60%;
     border-radius: 1rem;
     border: none;
-    background-color: #008bf8;
+    background-color: rgb(51, 60, 60);
     color: #fff;
     font-size: 1rem;
     padding: .5rem 1rem;
@@ -34,52 +35,46 @@
     bottom: 0;
     opacity: 0;
     transition: 0.3s ease-out;
-   }
-   
-   .text-body {
+}
+
+.text-body {
     color: rgb(134, 134, 134);
-   }
-   
-   /*Text*/
-   .text-title {
+}
+
+/*Text*/
+.text-title {
     font-size: 1.5em;
     font-weight: bold;
-   }
-   
-   /*Hover*/
-   .card:hover {
-    border-color: #008bf8;
+}
+
+/*Hover*/
+.card:hover {
+    border-color: rgb(2, 43, 225);
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-   }
-   
-   .card:hover .card-button {
+}
+
+.card:hover .card-button {
     transform: translate(-50%, 50%);
     opacity: 1;
-   }
+}
 
 
-   .imageCoontainer{
+.imageCoontainer {
     width: 95%;
     height: 20vh;
     object-fit: cover;
     margin-top: 5px;
     border-radius: 1.5vw;
-   
-   }
 
-   @media (max-width: 858px){  /*telefono*/
-    .card{
+}
 
-        width: 90vw;
+@media (max-width: 858px) {
+
+    /*telefono*/
+    .card {
+
+        width: 85vw;
         height: 36vh;
+        margin-right: 5vw;
     }
-   }
-
-
-   
-
-
-   
-       
-   
-
+}
