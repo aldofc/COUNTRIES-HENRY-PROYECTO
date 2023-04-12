@@ -1,51 +1,76 @@
 const axios = require('axios')
 const { Activity, Country } = require('../db')
+const { Op } = require('sequelize');
 
-const infoCleaner = (array) => {
-    return array.map((e) => {
-        return {
-            id: e.cca3,
-            name: e.name.common,
-            image: e.flags[0],
-            continent: e.continents[0],
-            capital: e.capital ? e.capital[0] : 'el pais no tiene capital',
-            subregion: e.subregion,
-            area: e.area,
-            population: e.population,
+const countriesApi = async () => {
+    let dbCountries = await Country.findAll({
+        include: [Activity]
+    })
+    try {
+        if (dbCountries.length === 0) {
+            const { data } = await axios.get('https://restcountries.com/v3/all');
+
+
+            const countries = data.map((country) => {
+                return {
+                    id: country.cca3,
+                    name: country.name.common,
+                    image: country.flags[0],
+                    continent: country.continents[0],
+                    capital: country.capital ? e.capital[0] : 'el pais no tiene capital',
+                    subregion: country.subregion,
+                    area: country.area,
+                    population: country.population,
+                };
+            })
+
+            console.log(countries)
+
+            countries.forEach((country) => {
+                Country.findOrCreate({
+                    where: { id: country.id },
+                    defaults: {
+                        id: country.cca3,
+                        name: country.name.common,
+                        image: country.flags,
+                        continent: country.continents,
+                        capital: country.capital,
+                        subregion: country.subregion,
+                        area: country.area,
+                        population: country.population,
+                    }
+                })
+            });
+            dbCountries = await Country.findAll({
+                include: [Activity]
+            })
 
         }
-    })
-};
-
-const getAllCountries = async (name) => {
-    const countryDB = await Country.findAll()
-
-    const infoApi = (
-        await axios.get("https://restcountries.com/v3/all")
-    ).data;
-
-    const countryApi = infoCleaner(infoApi);
-
-    return [...countryDB, ...countryApi];
-};
-
+        return dbCountries
+    } catch (error) {
+        console.log('Error getCountries en controller ' + error)
+    }
+}
 
 const getCountryByName = async (name) => {
-    const infoApi = (
-        await axios.get("https://restcountries.com/v3/all")
-    ).data;
-
-    const countryApi = infoCleaner(infoApi);
-
-    const countryFiltered = countryApi.filter((country) => country.name === name);
-
-    const countryDB = await Country.findAll({ where: { name: name } });
-
-    return [...countryFiltered, ...countryDB];
+    try {
+        const byNameCountries = await Country.findAll({
+            where: {
+                name: {
+                    [Op.iLike]: `%${name}%`
+                }
+            },
+            include: [Activity]
+        })
+        return byNameCountries
+    } catch (error) {
+        console.log('error getCountriesByName en controller ' + error)
+    }
 }
+
 
 
 module.exports = {
     getCountryByName,
-    getAllCountries
+    countriesApi
 }

@@ -5,9 +5,15 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Country', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true
+      type: DataTypes.STRING(3), // validacion que no puede tener mas de 3
+      primaryKey: true,
+      unique: true,
+      allowNull: false,
+      validate:{
+        len: [3], //validacion de que no puede tener mas de 3
+      },
+      
+      
     },
 
     name: {

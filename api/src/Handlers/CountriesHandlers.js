@@ -1,6 +1,6 @@
 const {
   getCountryByName,
-  getAllCountries
+  countriesApi
 } = require("../Controllers/CountriesControllers");
 
 const getCountriesHandler = async (req, res) => {
@@ -11,7 +11,7 @@ const getCountriesHandler = async (req, res) => {
       const countryByName = await getCountryByName(name);
       res.status(200).json(countryByName);
     } else {
-      const response = await getAllCountries();
+      const response = await countriesApi();
       res.status(200).json(response);
     }
   } catch (error) {
@@ -23,7 +23,7 @@ const getIdHandler = async (req, res) => {
 
   try {
     const { id } = req.params;
-    const totalCountries = await getAllCountries()
+    const totalCountries = await countriesApi()
 
     if (id) {
       let countryId = await totalCountries.filter((r) => r.id == id)

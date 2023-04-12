@@ -63,7 +63,7 @@ export function getAllActivities() {
 export function postActivity(payload) {
     return async function (dispatch) {
         try {
-            var json = await axios.post('http://localhost:3001/countries', payload)
+            var json = await axios.post('http://localhost:3001/activities', payload)
             return dispatch({
                 type: POST_ACTIVITY,
                 payload: json.data

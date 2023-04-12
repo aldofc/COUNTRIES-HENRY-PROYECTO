@@ -20,6 +20,11 @@ const Navbar = ({ handleChange, handleSubmit }) => {
         <Link to={'/create'}>
           <button className='button'>CREATE ACTIVITY</button>
         </Link>
+
+
+        <Link to={'/activities'}>
+          <button className='button'>ACTIVITIES</button>
+        </Link>
       </div>
 
 
