@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Navbar from '../../Components/Navbar/Navbar'
 import Card from '../../Components/Card/Card'
-import { getCountries, orderByName, orderByAscOrDesc, filterContinent, Loading } from '../../Redux/Actions/index'
+import { getCountries, orderByName, orderByAscOrDesc, filterContinent, Loading , activitiesFilter, getAllActivities} from '../../Redux/Actions/index'
 import Paginado from '../../Components/Paginado/Paginado'
 import Loader from '../../Components/Loader/Loader'
 import './Home.css'
@@ -11,9 +11,15 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const countries = useSelector(state => state.countries)
+  const allActivities = useSelector(state => state.allActivities)
 
   const [orden, setOrden] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
+  const [activities, setActivities] = useState([])
+
+
+  
+
  
 
   const countriesPerPage = 10;
@@ -60,6 +66,30 @@ const Home = () => {
 
   }
 
+  useEffect(() => {
+    dispatch(getAllActivities())
+    dispatch(activitiesFilter(activities))
+}, [dispatch, activities])
+
+
+  function handleActivity(e){
+    
+    if(e.target.value !== 'Seleccionar' && !activities.includes(e.target.value)){
+      setActivities([...activities, e.target.value])
+  }
+
+    
+  }
+
+
+
+
+  function handleDeleteActivities(e) {
+    setActivities(activities.filter(activity => activity !== e.target.value))
+}
+
+
+ 
   return (
 
 
@@ -107,13 +137,25 @@ const Home = () => {
                   <option value="hasc">MINOR TO MAJOR</option>
                 </select>
 
-                <select >
-
-                  <option value=""> ORDER BY ACTIVITY </option>
-                  <option value="">ALL</option>
-                  <option value="">TEST</option>
-
-                </select>
+                <select onChange={e => handleActivity(e)}>
+                        <option >Seleccionar</option>
+                        <option >all</option>
+                        {allActivities.map(acti => {
+                            return(
+                                <option key={acti.name} value={acti.name}>{acti.name}</option>
+                                )
+                            })}
+                    </select>
+                    <div className="displayActivities">
+                    {activities.map((activity) => {
+                        return(
+                            <div className="eachActivity" key={activity}>
+                                <p className="activityName">{activity}</p>
+                                <button className="closeButton" onClick={e => handleDeleteActivities(e)} value={activity}>X</button>
+                            </div>
+                        )
+                    })}
+                </div>
 
 
                 <button className='buttonReset' onClick={e => { handleCLick(e) }}>

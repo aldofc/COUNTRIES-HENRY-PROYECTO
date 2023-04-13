@@ -7,7 +7,8 @@ import {
     POST_ACTIVITY,
     GET_ALL_ACTIVITIES,
     SORT_BY_NAME,
-    SORT_CONTINENT
+    SORT_CONTINENT,
+    FILTER_ACTIVITIES
 } from "../Actions/index"
 
 
@@ -16,6 +17,7 @@ const initialState = {
     countriesById: {},
     allActivities: [],
     backUpCountries: [],
+    country: [],
     loader: true,
 
 
@@ -106,6 +108,25 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 countries: continentFilteredBC,
             };
+            case FILTER_ACTIVITIES:
+                if(action.payload.length !== 0){
+                    const selectedActivities = action.payload
+                    const filterActivities = state.backUpCountries.filter(() => {
+                        return selectedActivities.map(activity => activity.name)
+                    })
+                    return{
+                        ...state,
+                        countries: filterActivities
+                    }
+                } else{
+                    return {
+                        ...state,
+                        countries: state.backUpCountries
+                    }        
+                };
+                    
+                
+                
         case LOADER:
             const loader = state.loader
             if (loader == true) {

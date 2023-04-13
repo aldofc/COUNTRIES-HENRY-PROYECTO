@@ -145,7 +145,7 @@ function Create() {
             </div>
             {errors.name && (<p>{errors.name}</p>)}
             <div className="inputBox">
-              <label>Difficulty (from 1 to 5) : </label>
+              <label >Difficulty (from 1 to 5) : </label>
               <input
               className='input'
                 type='number'
@@ -160,7 +160,7 @@ function Create() {
               <label>Duration (24h format) : </label>
               <input
               className='input'
-                type='text'
+                type='number'
                 autoComplete="off"
                 name='duration'
                 value={activity.duration}
@@ -172,7 +172,7 @@ function Create() {
           <div>
             <div>
             <div className='content-select2'>
-                <h3>Season</h3>
+                <h3 className="heading2">Season: </h3>
                 <select onChange={e => handleSeasons(e)}>
                   <option>Select</option>
                   <option value='Spring'>Spring</option>
@@ -185,7 +185,7 @@ function Create() {
             </div>
             <div>
             <div className='content-select2'>
-                <h3>Countries</h3>
+                <h3 className="heading2">Countries: </h3>
                 <select value={selected} onChange={e => [handleCountries(e), setSelected(e)]}>
                   <option >Select</option>
                   {countriesList?.map(country => {
@@ -220,7 +220,7 @@ function Create() {
               errors.duration ||
               errors.season ||
               errors.countries ?
-              <button disabled>Create Activity</button>
+              <button disabled className="crear">Create Activity</button>
               : <button className="crear" onClick={e => handleCheckErrors(e)}>Create Activity</button>}
           </div>
         </form>

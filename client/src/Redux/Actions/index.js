@@ -11,6 +11,7 @@ export const SORT_BY_ASC_OR_DESC = 'SORT_BY_ASC_OR_DESC'
 export const CLEAN = 'CLEAN'
 export const LOADER = 'LOADER'
 export const SORT_CONTINENT = 'SORT_CONTINENT'
+export const FILTER_ACTIVITIES = 'FILTER_ACTIVITIES'
 
 export function getCountries() {
     return async function (dispatch) {
@@ -48,31 +49,27 @@ export function getCountriesByName(payload) {
 
 export function getAllActivities() {
     return async function (dispatch) {
-        try {
+        
             var json = await axios.get(`http://localhost:3001/activities`)
             return dispatch({
                 type: GET_ALL_ACTIVITIES,
                 payload: json.data
             })
-        } catch (error) {
-            console.log('Error action filterByActivity ' + error)
-        };
+        } 
     };
-};
+
 
 export function postActivity(payload) {
     return async function (dispatch) {
-        try {
+        
             var json = await axios.post('http://localhost:3001/activities', payload)
             return dispatch({
                 type: POST_ACTIVITY,
                 payload: json.data
             })
-        } catch (error) {
-            console.log('Error action postActivity ' + error)
-        };
+        } 
     };
-};
+
 
 export function orderByName(payload) {
     return ({
@@ -98,5 +95,13 @@ export function filterContinent(payload) {
 
 export function Loading() {
     return { type: LOADER };
+}
+
+
+export function activitiesFilter(payload) {
+    return({
+        type: FILTER_ACTIVITIES,
+        payload: payload
+    })
 }
 
