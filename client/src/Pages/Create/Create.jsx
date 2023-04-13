@@ -4,6 +4,8 @@ import { getCountries } from '../../Redux/Actions'
 import { postActivity } from '../../Redux/Actions/index'
 import { useHistory } from 'react-router-dom'
 import validate from "./Validate";
+import './Create.css'
+
 
 
 function Create() {
@@ -20,7 +22,7 @@ function Create() {
   let countriesList = countries.map(country => {
     return ({
       name: country.name,
-      flag: country.image
+      image: country.image
     })
   });
   const [selected, setSelected] = useState("");
@@ -123,25 +125,29 @@ function Create() {
 
 
   return (
-    <div className="newActivity">
+    <div className="conainerForm">
       <div>
-        <h1>New Activity</h1>
+        <br></br>
+        <h1 className='heading1'>New Activity</h1>
         <form className="formActivity" onSubmit={e => handleSubmit(e)}>
-          <div>
-            <div className="info">
-              <label>Name</label>
+          <div className="inputs">
+            <div className="inputBox">
+              <label className="label">Name : </label>
               <input
+              className='input'
                 type='text'
                 name='name'
                 autoComplete="off"
                 value={activity.name}
                 onChange={e => handleChange(e)}
               />
+              
             </div>
             {errors.name && (<p>{errors.name}</p>)}
-            <div className="info">
-              <label>Difficulty (from 1 to 5)</label>
+            <div className="inputBox">
+              <label>Difficulty (from 1 to 5) : </label>
               <input
+              className='input'
                 type='number'
                 name='difficulty'
                 autoComplete="off"
@@ -150,9 +156,10 @@ function Create() {
               />
             </div>
             {errors.difficulty && (<p>{errors.difficulty}</p>)}
-            <div className="info">
-              <label>Duration (24h format)</label>
+            <div className="inputBox">
+              <label>Duration (24h format) : </label>
               <input
+              className='input'
                 type='text'
                 autoComplete="off"
                 name='duration'
@@ -164,7 +171,7 @@ function Create() {
           </div>
           <div>
             <div>
-              <div className="info">
+            <div className='content-select2'>
                 <h3>Season</h3>
                 <select onChange={e => handleSeasons(e)}>
                   <option>Select</option>
@@ -177,10 +184,10 @@ function Create() {
               {errors.season && (<p>{errors.season}</p>)}
             </div>
             <div>
-              <div className="info">
+            <div className='content-select2'>
                 <h3>Countries</h3>
                 <select value={selected} onChange={e => [handleCountries(e), setSelected(e)]}>
-                  <option>Select</option>
+                  <option >Select</option>
                   {countriesList?.map(country => {
                     return (
                       <option key={country.name}>
@@ -189,14 +196,18 @@ function Create() {
                     )
                   })}
                 </select>
+               
               </div>
+              <br></br> <br></br>
               {errors.countries && (<p>{errors.countries}</p>)}
-              <div className="displayCountries">
+              <div className="countriesContainer">
                 {activity.countries.map((country) => {
                   return (
-                    <div className="eachCountry" key={country}>
-                      <p className="countryName"   >{country}</p>
-                      <button className="closeButton" onClick={e => { deleteCountry(e) }} value={country}>X</button>
+                    <div className="paisesSelect" key={country}>
+                      <button className="buttonClose" onClick={e => { deleteCountry(e) }} value={country}>X</button>
+                      <p   >{country}</p>
+                      
+                      
                     </div>
                   )
                 })}
@@ -210,7 +221,7 @@ function Create() {
               errors.season ||
               errors.countries ?
               <button disabled>Create Activity</button>
-              : <button onClick={e => handleCheckErrors(e)}>Create Activity</button>}
+              : <button className="crear" onClick={e => handleCheckErrors(e)}>Create Activity</button>}
           </div>
         </form>
       </div>

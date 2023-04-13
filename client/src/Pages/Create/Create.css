@@ -1,22 +1,171 @@
-.actualCountriesContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+.conainerForm{
+    background: url('https://images4.alphacoders.com/758/thumb-1920-75886.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    width: 100vw;
+    
 }
 
-.actualCountriesContainer img {
-    width: 60px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 10px;
+
+
+.inputs{
+    text-align: end;
+   margin-right: 9vw;
 }
 
-.selectedCountriesContainer {
+
+
+
+.formActivity{
+    
+   width: 32.8vw;
+   height: 65vh;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 0px 4px rgba(52, 52, 53, 0.185);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 0 auto;
+  justify-content: center;
+
+    
+}
+
+.heading1{
+    color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+.label{
+    color: rgb(0, 0, 0);
+  margin-bottom: 4px;
+}
+
+
+
+.input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 10vw;
+    font-size: 1rem;
+    color: #4a5568;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    
+  }
+
+
+
+  .input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #cbd5e0;
+  }
+  
+  .input:valid {
+    border: 1px solid green;
+  }
+  
+  .input:invalid {
+    border: 1px solid rgba(14, 14, 14, 0.205);
+  }
+  
+  .crear {
+    background-color: #1a202c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 5vh;
+  }
+
+
+
+  .content-select2 {
+
+    position: relative;
     display: flex;
+    bottom: -2vh;
+    margin-bottom: 5vh;
+    width: 15vw;
+    margin: 0 auto;
     justify-content: center;
-    margin-left: 35vw;
-    width: 30vw;
+
+}
+
+.content-select2 select {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 1vh;
+    height: 42px;
+    outline: 0;
+    border: 1px;
+    border-radius: 0;
+    background-color: rgb(51, 60, 60);
+    color: #7b7b7b;
+    font-size: 1em;
+    color: #ffffff;
+    font-family:
+        'Quicksand', sans-serif;
+    border: 2px solid rgba(225, 224, 224, 0.2);
+    margin: .3vw;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.content-select2 select:hover {
+    background-color: rgba(90, 85, 78, 0.422);
+}
+
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.countriesContainer{
+
+   width: 33vw;
     height: 10vh;
-    background-color: antiquewhite;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.paisesSelect{
+
+    width: 10vw;
+    height: 7vh;
+   
+    border-radius: 1vw;
+    background-color: beige;
+    margin-left: 1vw;
+    margin-right: 1vw;
+   
+
+}
+
+
+.buttonClose{
+    
+    float: right;
+    width: 2vw;
+    height: 3vh;
+    background-color: red;
+    border-radius: 1vw;
+    color: #ffffff;
 }

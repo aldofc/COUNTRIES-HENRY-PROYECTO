@@ -134,6 +134,7 @@ const Home = () => {
             name={country.name}
             image={country.image}
             continent={country.continent}
+            
           />
 
         })}
