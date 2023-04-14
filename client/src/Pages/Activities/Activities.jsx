@@ -22,6 +22,7 @@ const Activities = () => {
 
     if (loader === true) {
         return (
+            <section>
             <div className='containerActivities'>
                 <br></br><br></br>
                 <div className='CardsContainer'>
@@ -39,6 +40,7 @@ const Activities = () => {
                 </div>
 
             </div>
+            </section>
         )
     } else {
         return (

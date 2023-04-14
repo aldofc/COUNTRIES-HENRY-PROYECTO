@@ -19,12 +19,9 @@ const createDB = async (name, difficulty, duration, season, countries) => {
 
         return newActivity.addCountry(selectCountries)
     } catch (error) {
-        console.log('Error postActivity en controller ' + error)
+        console.log('createDb error controller ' + error)
     }
 };
-
-
-
 
 
 const activitiesGet = async () => {
@@ -33,7 +30,7 @@ const activitiesGet = async () => {
         });
         return byActivities
     } catch (error) {
-        console.log('Error en get activities en la funcion ' + error)
+        console.log('controller activitiesget error ' + error)
     }
 };
 

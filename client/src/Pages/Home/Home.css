@@ -136,16 +136,44 @@ section {
         height: 455vh;
         width: 110vw;
 
+        
     }
 
     .content-select {
-        width: 80vw;
-        padding: 5vh;
+        width: 75vw;
+        
         justify-content: center;
         text-align: center;
+        display: flex;
+        flex-direction: column;
 
     }
 
+    .content-select select {
+        display: inline-block;
+        width: 80vw;
+        cursor: pointer;
+        padding: 1vh;
+        height: 42px;
+        outline: 0;
+        border: 1px;
+        border-radius: 0;
+        background-color: rgb(51, 60, 60);
+        color: #7b7b7b;
+        font-size: 1em;
+        color: #ffffff;
+        font-family:
+            'Quicksand', sans-serif;
+        border: 2px solid rgba(225, 224, 224, 0.2);
+        margin: .3vw;
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.25s ease;
+    }
+    
+
+
+    
 
 
 

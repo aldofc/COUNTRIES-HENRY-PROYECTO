@@ -1,6 +1,6 @@
 const axios = require('axios')
 const { Activity, Country } = require('../db')
-const { Op } = require('sequelize');
+const { Op } = require('sequelize'); // op se incluyen en forma de objeto
 
 const countriesApi = async () => {
     let dbCountries = await Country.findAll({
@@ -26,7 +26,7 @@ const countriesApi = async () => {
 
             console.log(countries)
 
-            countries.forEach((country) => {
+            countries.forEach((country) => {  // forEach nos permite recorrer estructuras con varios elementos
                 Country.findOrCreate({
                     where: { id: country.id },
                     defaults: {
@@ -48,7 +48,7 @@ const countriesApi = async () => {
         }
         return dbCountries
     } catch (error) {
-        console.log('Error getCountries en controller ' + error)
+        console.log('error controller countriesApi ' + error)
     }
 }
 
@@ -64,7 +64,7 @@ const getCountryByName = async (name) => {
         })
         return byNameCountries
     } catch (error) {
-        console.log('error getCountriesByName en controller ' + error)
+        console.log('error controller por nombre ' + error)
     }
 }
 

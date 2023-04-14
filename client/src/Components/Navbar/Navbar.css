@@ -246,4 +246,24 @@
     margin-left: 2.5vw;
 
   }
+
+
+  
+}
+
+
+@media (max-width: 858px){
+
+  .containerNav {
+    display: flex;
+  
+    width: 100vw;
+    height: 30vh;
+    background-color: rgb(51, 60, 60);
+  
+  
+  
+  }
+  
+
 }
