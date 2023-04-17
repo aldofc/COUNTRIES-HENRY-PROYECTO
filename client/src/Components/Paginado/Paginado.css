@@ -39,7 +39,7 @@
   .containerResponsivePaginado{
     width: 100vw;
     height: 20vh;
-    background-color: aquamarine;
+    
   }
 
 
@@ -49,7 +49,22 @@
     left: 25%;
     right: 25%;
     
+    
   
+  }
+
+
+  .buttonFlecha {
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    width: 10vw;
+    height: 45px;
+    opacity: 0.75;
+    border: 1px solid #e7eae8;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: bounce_513 1s infinite;
   }
 
 
