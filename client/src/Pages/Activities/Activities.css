@@ -2,10 +2,15 @@
     background: url('https://images4.alphacoders.com/758/thumb-1920-75886.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 130vh;
+    height: 140vh;
     width: 100vw;
     
 
+}
+
+
+.moveButoon{
+    margin-left: 3vw;
 }
 
 @media (max-width: 858px) {
@@ -14,10 +19,17 @@
         background: url('https://images4.alphacoders.com/758/thumb-1920-75886.jpg') no-repeat;
         background-size: cover;
         background-position: center center;
-        height: 500vh;
+        height: 700vh;
         width: 100vw;
         
     
+    }
+
+    .moveButoon{
+        display: flex;
+        justify-content: center;
+        margin-right: 8vw;
+       
     }
 
 }

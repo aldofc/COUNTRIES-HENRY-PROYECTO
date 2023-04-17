@@ -21,7 +21,7 @@
 .formActivity{
     
    width: 32.8vw;
-   height: 84vh;
+   height: 88vh;
   background-color: #b5b1b1;
   padding: 20px;
   box-shadow: 0px 0px 0px 4px rgba(52, 52, 53, 0.185);
@@ -41,6 +41,7 @@
   display: block;
   font-weight: bold;
   font-size: x-large;
+  margin: 0 auto;
 }
 
 

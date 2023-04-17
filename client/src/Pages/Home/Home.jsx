@@ -44,12 +44,14 @@ const Home = () => {
     e.preventDefault();
     dispatch(orderByName(e.target.value))
     setOrden(`Ordenado ${e.target.value}`)
+    setCurrentPage(1)
   }
 
   function handleSortPopulation(e) {
     e.preventDefault();
     dispatch(orderByAscOrDesc(e.target.value))
     setOrden(`Ordenado ${e.target.value}`)
+    setCurrentPage(1)
   }
 
   function handleCLick(e) {
@@ -58,12 +60,13 @@ const Home = () => {
     //dispatch(Loading())
     dispatch(getCountries())
     // dispatch(Loading())
+    setCurrentPage(1)
   }
 
   function handleSortContinent(e) {
     e.preventDefault();
     dispatch(filterContinent(e.target.value))
-
+    setCurrentPage(1)
   }
 
   useEffect(() => {
@@ -188,7 +191,7 @@ const Home = () => {
 
           
 
-          <Paginado
+          <Paginado 
             currentPage={currentPage}
             countriesPerPage={countriesPerPage}
             countries={countries.length}

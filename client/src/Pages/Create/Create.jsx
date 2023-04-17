@@ -127,7 +127,7 @@ function Create() {
   return (
     <div className="conainerForm">
       <div>
-        <br></br>
+        
         <h1 className='heading1'>New Activity</h1>
         <form className="formActivity" onSubmit={e => handleSubmit(e)}>
           <div className="inputs">

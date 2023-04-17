@@ -10,7 +10,7 @@
   font-size: 20px;
   background-color: white;
   color: black;
-  width: 45px;
+  width: 2vw;
   height: 45px;
   opacity: 0.75;
   border: 1px solid #e7eae8;
@@ -31,4 +31,28 @@
     transform: translateY(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
+}
+
+@media (max-width: 858px) {
+
+
+  .containerResponsivePaginado{
+    width: 100vw;
+    height: 20vh;
+    background-color: aquamarine;
+  }
+
+
+  .containerPaginado {
+    position: absolute;
+    padding: 2vw;
+    left: 25%;
+    right: 25%;
+    
+  
+  }
+
+
+  
+
 }

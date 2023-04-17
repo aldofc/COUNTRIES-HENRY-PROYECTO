@@ -13,15 +13,17 @@ const Paginado = ({ countriesPerPage, countries, paginado, currentPage }) => {
     }
 
     return (
+        <div className='containerResponsivePaginado'>
         <div className='containerPaginado'>
 
             <button className='buttonFlecha' onClick={() => paginado(currentPage === 1 ? pageNumbers.length : currentPage - 1)}> 🢀 </button>
 
             {pageNumbers &&
                 pageNumbers.map(number => {
-                    return (<button className='buttonFlecha' key={number} onClick={() => paginado(number)}>{currentPage === number ? <b>{number}</b> : number}</button>)
+                    return (<button className='buttonFlecha'  key={number} onClick={() => paginado(number)}>{currentPage === number ? <b>{number}</b> : number}</button>)
                 })}
             <button className='buttonFlecha' onClick={() => paginado(currentPage === 0 ? pageNumbers.length : currentPage + 1)}> 🢂 </button>
+        </div>
         </div>
     )
 }
